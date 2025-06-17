@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MatchGlee - Connect Authentically</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+            color: #333; /* Dark text */
+            margin: 0;
+            line-height: 1.6;
+        }
+        .gradient-text {
+            /* Using custom colors from the provided image */
+            background: linear-gradient(to right, #E83D8E, #6A2ECF); /* Pink/Magenta to Deep Purple */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #E83D8E; /* Fallback for browsers that don't support text-fill-color */
+        }
+        .section-padding {
+            padding: 4rem 1rem; /* Default padding for sections */
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 2rem; /* Larger padding on desktop */
+            }
+        }
+        .form-message {
+            margin-top: 1rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            display: none; /* Hidden by default */
+            max-width: 90%; /* Adjust width for messages */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-message.success {
+            background-color: #d1fae5; /* Green background */
+            color: #065f46; /* Dark green text */
+            border: 1px solid #34d399;
+        }
+        .image-container {
+            border-radius: 1rem;
+            overflow: hidden; /* Ensures image respects border-radius */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-sm py-4 px-6 fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-center items-center">
+            <a href="#" class="flex items-center text-3xl font-extrabold">
+                <!-- MatchGlee SVG Logo -->
+                <svg width="40" height="20" viewBox="0 0 100 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block h-8 w-auto align-middle mr-2">
+                    <defs>
+                        <linearGradient id="logo-gradient-svg" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#E83D8E" /> <!-- Pink/Magenta from image -->
+                            <stop offset="100%" stop-color="#6A2ECF" /> <!-- Deep Purple from image -->
+                        </linearGradient>
+                    </defs>
+                    <!-- Simplified knot-like path with a self-intersection to imply intertwining -->
+                    <path d="M10 25 Q 25 5, 50 25 Q 75 45, 90 25 Q 75 5, 50 25 Q 25 45, 10 25 Z"
+                          stroke="url(#logo-gradient-svg)" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="gradient-text">MatchGlee</span>
+            </a>
+            <!-- Navigation links removed as per user request -->
+        </div>
+    </header>
+
+    <main class="pt-20"> <!-- Padding-top to account for fixed header -->
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-[#E83D8E] to-[#6A2ECF] text-white section-padding text-center">
+            <div class="max-w-4xl mx-auto" data-aos="fade-down" data-aos-duration="1000">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">
+                    Connecting the World, One Smile at a Time.
+                </h1>
+                <p class="text-lg md:text-2xl opacity-90 mb-8 max-w-2xl mx-auto">
+                    MatchGlee is more than just a social media platform; it's a vibrant community where authentic connections flourish and meaningful interactions illuminate your digital journey.
+                </p>
+                <a href="#suggestionFormSection" class="bg-white text-[#6A2ECF] hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105 inline-block">
+                    Suggest a Feature
+                </a>
+            </div>
+        </section>
+
+        <!-- Our Story/Mission Section -->
+        <section class="bg-white section-padding">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1 text-center md:text-left" data-aos="fade-right" data-aos-duration="1000">
+                    <h2 class="text-4xl font-bold mb-6 gradient-text">Our Story & Mission</h2>
+                    <p class="text-lg text-gray-700 mb-4">
+                        In an ever-evolving digital landscape, we recognized a profound need for a social platform that rises above the noise – one that genuinely prioritizes **authenticity, respect, and deep engagement**. MatchGlee was born from this understanding, driven by a passion to cultivate a space where every interaction holds value.
+                    </p>
+                    <p class="text-lg text-gray-700">
+                        Our mission is to empower individuals to be their true selves, discover like-minded communities, and forge lasting relationships. We are dedicated to redefining social networking, making it a source of joy, purpose, and genuine connection.
+                    </p>
+                </div>
+                <div class="order-1 md:order-2 image-container" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <img src="https://placehold.co/600x400/6A2ECF/ffffff?text=Our+Story" alt="MatchGlee Team Working" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Preview / How it works section -->
+        <section class="bg-gray-50 section-padding">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="image-container" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="https://placehold.co/600x400/E83D8E/ffffff?text=MatchGlee+Interface" alt="MatchGlee User Interface Preview" class="w-full h-auto object-cover">
+                </div>
+                <div class="text-center md:text-left" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <h2 class="text-4xl font-bold mb-6 gradient-text">Experience the Difference</h2>
+                    <p class="text-lg text-gray-700 mb-4">
+                        MatchGlee is meticulously designed with you in mind. Our intuitive interface ensures seamless navigation, allowing you to easily share moments, discover trends, and connect with people who share your passions.
+                    </p>
+                    <p class="text-lg text-gray-700">
+                        From vibrant community groups to personalized feeds, every feature is crafted to enhance your social experience and help you build a network that truly matters.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Core Values Section -->
+        <section class="bg-white section-padding text-center">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold mb-12 gradient-text" data-aos="fade-up" data-aos-duration="1000">Our Core Values</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-6 bg-pink-50 rounded-xl shadow-md transform hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-[#E83D8E]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <h3 class="text-2xl font-semibold text-[#E83D8E] mb-3">Authenticity</h3>
+                        <p class="text-gray-600">We champion real identities and encourage honest, heartfelt self-expression in every interaction.</p>
+                    </div>
+                    <div class="p-6 bg-purple-50 rounded-xl shadow-md transform hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-[#6A2ECF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h-1.025a7.485 7.485 0 01-13.974 0H4V7a4 4 0 014-4h8a4 4 0 014 4v13z"></path></svg>
+                        <h3 class="text-2xl font-semibold text-[#6A2ECF] mb-3">Community</h3>
+                        <p class="text-gray-600">Fostering diverse, supportive, and inclusive spaces where everyone feels a sense of belonging.</p>
+                    </div>
+                    <div class="p-6 bg-rose-50 rounded-xl shadow-md transform hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-[#E83D8E]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                        <h3 class="text-2xl font-semibold text-[#E83D8E] mb-3">Engagement</h3>
+                        <p class="text-gray-600">Encouraging active participation and meaningful conversations that enrich perspectives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mobile App Coming Soon Section -->
+        <section class="bg-gray-50 section-padding text-center">
+            <div class="max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="text-4xl font-bold mb-6 gradient-text">Coming Soon to Your Mobile Device!</h2>
+                <p class="text-lg text-gray-700 mb-8">
+                    MatchGlee will soon be available on your favorite mobile platforms. Get ready to connect on the go!
+                </p>
+                <div class="flex justify-center items-center space-x-6 flex-wrap gap-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                    <a href="#" class="inline-flex items-center bg-gray-800 text-white py-3 px-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105" aria-label="Download on Google Play">
+                        <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M7 11.23L12 16.23L17 11.23L12 6.23L7 11.23ZM19 12V21H5V12H19ZM12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 4C7.58 4 4 7.58 4 12C4 16.42 7.58 20 12 20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4Z" fill="white"/>
+                        </svg>
+                        <div>
+                            <div class="text-xs opacity-75">Get it on</div>
+                            <div class="font-semibold text-lg -mt-1">Google Play</div>
+                        </div>
+                    </a>
+                    <a href="#" class="inline-flex items-center bg-gray-800 text-white py-3 px-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105" aria-label="Download on App Store">
+                        <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.25C6.477 2.25 2 6.727 2 12.25C2 17.773 6.477 22.25 12 22.25C17.523 22.25 22 17.773 22 12.25C22 6.727 17.523 2.25 12 2.25ZM12 4.25C16.418 4.25 20 7.832 20 12.25C20 16.668 16.418 20.25 12 20.25C7.582 20.25 4 16.668 4 12.25C4 7.832 7.582 4.25 12 4.25ZM12 5.5C9.79 5.5 8 7.29 8 9.5C8 11.71 9.79 13.5 12 13.5C14.21 13.5 16 11.71 16 9.5C16 7.29 14.21 5.5 12 5.5ZM12 7.5C13.105 7.5 14 8.395 14 9.5C14 10.605 13.105 11.5 12 11.5C10.895 11.5 10 10.605 10 9.5C10 8.395 10.895 7.5 12 7.5Z" fill="white"/>
+                            <path d="M12.5 16C12.5 16.2761 12.2761 16.5 12 16.5C11.7239 16.5 11.5 16.2761 11.5 16C11.5 15.7239 11.7239 15.5 12 15.5C12.2761 15.5 12.5 15.7239 12.5 16Z" fill="white"/>
+                            <path d="M14.5 16C14.5 16.2761 14.2761 16.5 14 16.5C13.7239 16.5 13.5 16.2761 13.5 16C13.5 15.7239 13.7239 15.5 14 15.5C14.2761 15.5 14.5 15.7239 14.5 16Z" fill="white"/>
+                            <path d="M10.5 16C10.5 16.2761 10.2761 16.5 10 16.5C9.72386 16.5 9.5 16.2761 9.5 16C9.5 15.7239 9.72386 15.5 10 15.5C10.2761 15.5 10.5 15.7239 10.5 16Z" fill="white"/>
+                        </svg>
+                        <div>
+                            <div class="text-xs opacity-75">Available on the</div>
+                            <div class="font-semibold text-lg -mt-1">App Store</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="bg-gradient-to-r from-[#6A2ECF] to-[#E83D8E] text-white section-padding text-center">
+            <div class="max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="text-4xl font-bold mb-4">Ready to Join the Future of Social?</h2>
+                <p class="text-xl opacity-90 mb-8">
+                    Be the first to know when MatchGlee officially launches. Don't miss out on genuine connections!
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="bg-white text-[#6A2ECF] hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105 inline-block">
+                        Get Updates
+                    </a>
+                    <a href="#" class="border-2 border-white text-white hover:bg-white hover:text-[#6A2ECF] font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105 inline-block">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Suggestion Form -->
+        <section id="suggestionFormSection" class="bg-white section-padding text-center">
+            <div class="max-w-2xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="text-4xl font-bold mb-6 gradient-text">Suggest a Feature!</h2>
+                <p class="text-lg text-gray-700 mb-8">
+                    Have a brilliant idea that could make MatchGlee even better? We're all ears! Your valuable input directly shapes the future of our platform.
+                </p>
+                <form id="suggestionForm" class="flex flex-col items-center">
+                    <textarea
+                        id="featureSuggestion"
+                        rows="6"
+                        class="w-full p-4 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E83D8E] resize-y"
+                        placeholder="Share your innovative idea here... (e.g., 'Dark mode option', 'Enhanced group chat features', 'AI-powered content recommendations')"
+                        aria-label="Feature suggestion textarea"
+                    ></textarea>
+                    <button
+                        type="submit"
+                        class="bg-[#6A2ECF] hover:bg-[#E83D8E] text-white font-bold py-3 px-10 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#E83D8E] focus:ring-opacity-75"
+                    >
+                        Submit Idea
+                    </button>
+                </form>
+                <div id="formMessage" class="form-message"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Simplified Footer -->
+    <footer class="bg-gray-800 text-white py-8 px-6 text-center">
+        <div class="max-w-xl mx-auto flex justify-center items-center space-x-6">
+            <a href="#" class="text-gray-400 hover:text-[#E83D8E] transition duration-300" aria-label="MatchGlee on X">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.21-6.874L6.164 22H2.54l7.556-8.675L2.10 2.25h8.502L13.758 9.5zM17.49 20l-2.813-2.813L1.00 2.25h2.464l4.638 5.766L1.00 22h2.464l4.638-5.766L1.00 22h2.464z" /></svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-[#6A2ECF] transition duration-300" aria-label="MatchGlee on Instagram">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.446 2.05h-.892A10.887 10.887 0 001.5 12.004c0 2.91.95 5.584 2.544 7.683a10.887 10.887 0 007.902 3.321h.892A10.887 10.887 0 0022.5 12.004c0-2.91-.95-5.584-2.544-7.683A10.887 10.887 0 0012.446 2.05zM12 4.054a8.046 8.046 0 100 16.092 8.046 8.046 0 000-16.092zM12 6a6 6 0 100 12 6 6 0 000-12zm0 2a4 4 100 8 4 4 0 000-8zm0 2a2 2 0 100 4 2 2 0 000-4z" clip-rule="evenodd" /></svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-red-400 transition duration-300" aria-label="MatchGlee on YouTube">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-4.75 7.75c-.828 0-1.5.672-1.5 1.5v3.5c0 .828.672 1.5 1.5 1.5h9.5c.828 0 1.5-.672 1.5-1.5v-3.5c0-.828-.672-1.5-1.5-1.5h-9.5zm-.5 5.5l5.5-3.5-5.5-3.5v7z" clip-rule="evenodd" /></svg>
+            </a>
+        </div>
+        <p class="text-center text-gray-500 text-sm mt-4">&copy; 2025 MatchGlee. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true, // whether animation should happen only once - while scrolling down
+            mirror: false, // whether elements should animate out and in while scrolling past them
+            duration: 1000, // values from 0 to 3000, with step 50ms
+        });
+
+        // Form submission logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('suggestionForm');
+            const suggestionTextarea = document.getElementById('featureSuggestion');
+            const formMessage = document.getElementById('formMessage');
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevent default form submission
+
+                const suggestion = suggestionTextarea.value.trim();
+
+                if (suggestion) {
+                    // In a real application, you would send this to a backend server.
+                    // For now, we'll just show a success message.
+                    console.log('User Suggestion:', suggestion);
+                    formMessage.textContent = 'Thank you for your suggestion! We\'ve received your idea.';
+                    formMessage.className = 'form-message success block'; // Add 'block' to make it visible
+                    suggestionTextarea.value = ''; // Clear the textarea
+
+                    // Optionally hide the message after a few seconds
+                    setTimeout(() => {
+                        formMessage.classList.remove('block'); // Hide by removing block class
+                        formMessage.textContent = '';
+                    }, 5000);
+                } else {
+                    formMessage.textContent = 'Please enter your suggestion before submitting.';
+                    formMessage.className = 'form-message bg-red-100 text-red-700 border border-red-400 block'; // Add 'block'
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,48 +13,66 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f2f5; /* Light gray background */
-            color: #333; /* Dark text */
+            background-color: #f0f2f5;
+            /* Light gray background */
+            color: #333;
+            /* Dark text */
             margin: 0;
             line-height: 1.6;
         }
+
         .gradient-text {
             /* Using custom colors from the provided image */
-            background: linear-gradient(to right, #E83D8E, #6A2ECF); /* Pink/Magenta to Deep Purple */
+            background: linear-gradient(to right, #E83D8E, #6A2ECF);
+            /* Pink/Magenta to Deep Purple */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            color: #E83D8E; /* Fallback for browsers that don't support text-fill-color */
+            color: #E83D8E;
+            /* Fallback for browsers that don't support text-fill-color */
         }
+
         .section-padding {
-            padding: 4rem 1rem; /* Default padding for sections */
+            padding: 4rem 1rem;
+            /* Default padding for sections */
         }
+
         @media (min-width: 768px) {
             .section-padding {
-                padding: 6rem 2rem; /* Larger padding on desktop */
+                padding: 6rem 2rem;
+                /* Larger padding on desktop */
             }
         }
+
         .form-message {
             margin-top: 1rem;
             padding: 0.75rem 1.25rem;
             border-radius: 0.5rem;
             font-size: 0.9rem;
-            display: none; /* Hidden by default */
-            max-width: 90%; /* Adjust width for messages */
+            display: none;
+            /* Hidden by default */
+            max-width: 90%;
+            /* Adjust width for messages */
             margin-left: auto;
             margin-right: auto;
         }
+
         .form-message.success {
-            background-color: #d1fae5; /* Green background */
-            color: #065f46; /* Dark green text */
+            background-color: #d1fae5;
+            /* Green background */
+            color: #065f46;
+            /* Dark green text */
             border: 1px solid #34d399;
         }
+
         .image-container {
             border-radius: 1rem;
-            overflow: hidden; /* Ensures image respects border-radius */
+            overflow: hidden;
+            /* Ensures image respects border-radius */
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="bg-white shadow-sm py-4 px-6 fixed w-full top-0 z-50">
@@ -74,9 +93,11 @@
                     Connecting the World, One Smile at a Time.
                 </h1>
                 <p class="text-lg md:text-2xl opacity-90 mb-8 max-w-2xl mx-auto">
-                    MatchGlee is more than just a social media platform; it's a vibrant community where authentic connections flourish and meaningful interactions illuminate your digital journey.
+                    MatchGlee is more than just a social media platform; it's a vibrant community where authentic
+                    connections flourish and meaningful interactions illuminate your digital journey.
                 </p>
-                <a href="#suggestionFormSection" class="bg-white text-[#6A2ECF] hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105 inline-block">
+                <a href="#suggestionFormSection"
+                    class="bg-white text-[#6A2ECF] hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105 inline-block">
                     Suggest a Feature
                 </a>
             </div>
@@ -88,14 +109,21 @@
                 <div class="order-2 md:order-1 text-center md:text-left" data-aos="fade-right" data-aos-duration="1000">
                     <h2 class="text-4xl font-bold mb-6 gradient-text">Our Story & Mission</h2>
                     <p class="text-lg text-gray-700 mb-4">
-                        In an ever-evolving digital landscape, we recognized a profound need for a social platform that rises above the noise – one that genuinely prioritizes **authenticity, respect, and deep engagement**. MatchGlee was born from this understanding, driven by a passion to cultivate a space where every interaction holds value.
+                        In an ever-evolving digital landscape, we recognized a profound need for a social platform that
+                        rises above the noise – one that genuinely prioritizes **authenticity, respect, and deep
+                        engagement**. MatchGlee was born from this understanding, driven by a passion to cultivate a
+                        space where every interaction holds value.
                     </p>
                     <p class="text-lg text-gray-700">
-                        Our mission is to empower individuals to be their true selves, discover like-minded communities, and forge lasting relationships. We are dedicated to redefining social networking, making it a source of joy, purpose, and genuine connection.
+                        Our mission is to empower individuals to be their true selves, discover like-minded communities,
+                        and forge lasting relationships. We are dedicated to redefining social networking, making it a
+                        source of joy, purpose, and genuine connection.
                     </p>
                 </div>
-                <div class="order-1 md:order-2 image-container" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                    <img src="https://placehold.co/600x400/6A2ECF/ffffff?text=Our+Story" alt="MatchGlee Team Working" class="w-full h-auto object-cover">
+                <div class="order-1 md:order-2 image-container" data-aos="fade-left" data-aos-duration="1000"
+                    data-aos-delay="200">
+                    <img src="https://images.pexels.com/photos/1255062/pexels-photo-1255062.jpeg"
+                        alt="MatchGlee Team Working" class="w-full h-auto object-cover">
                 </div>
             </div>
         </section>
@@ -104,15 +132,20 @@
         <section class="bg-gray-50 section-padding">
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="image-container" data-aos="fade-right" data-aos-duration="1000">
-                    <img src="https://placehold.co/600x400/E83D8E/ffffff?text=MatchGlee+Interface" alt="MatchGlee User Interface Preview" class="w-full h-auto object-cover">
+                    <img src="https://images.pexels.com/photos/1267697/pexels-photo-1267697.jpeg"
+                        alt="MatchGlee User Interface Preview" class="w-full h-auto object-cover">
                 </div>
-                <div class="text-center md:text-left" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="text-center md:text-left" data-aos="fade-left" data-aos-duration="1000"
+                    data-aos-delay="200">
                     <h2 class="text-4xl font-bold mb-6 gradient-text">Experience the Difference</h2>
                     <p class="text-lg text-gray-700 mb-4">
-                        MatchGlee is meticulously designed with you in mind. Our intuitive interface ensures seamless navigation, allowing you to easily share moments, discover trends, and connect with people who share your passions.
+                        MatchGlee is meticulously designed with you in mind. Our intuitive interface ensures seamless
+                        navigation, allowing you to easily share moments, discover trends, and connect with people who
+                        share your passions.
                     </p>
                     <p class="text-lg text-gray-700">
-                        From vibrant community groups to personalized feeds, every feature is crafted to enhance your social experience and help you build a network that truly matters.
+                        From vibrant community groups to personalized feeds, every feature is crafted to enhance your
+                        social experience and help you build a network that truly matters.
                     </p>
                 </div>
             </div>
@@ -121,22 +154,42 @@
         <!-- Our Core Values Section -->
         <section class="bg-white section-padding text-center">
             <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl font-bold mb-12 gradient-text" data-aos="fade-up" data-aos-duration="1000">Our Core Values</h2>
+                <h2 class="text-4xl font-bold mb-12 gradient-text" data-aos="fade-up" data-aos-duration="1000">Our Core
+                    Values</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="p-6 bg-pink-50 rounded-xl shadow-md transform hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
-                        <svg class="w-12 h-12 mx-auto mb-4 text-[#E83D8E]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <div class="p-6 bg-pink-50 rounded-xl shadow-md transform hover:scale-105 transition duration-300"
+                        data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-[#E83D8E]" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
                         <h3 class="text-2xl font-semibold text-[#E83D8E] mb-3">Authenticity</h3>
-                        <p class="text-gray-600">We champion real identities and encourage honest, heartfelt self-expression in every interaction.</p>
+                        <p class="text-gray-600">We champion real identities and encourage honest, heartfelt
+                            self-expression in every interaction.</p>
                     </div>
-                    <div class="p-6 bg-purple-50 rounded-xl shadow-md transform hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
-                        <svg class="w-12 h-12 mx-auto mb-4 text-[#6A2ECF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h-1.025a7.485 7.485 0 01-13.974 0H4V7a4 4 0 014-4h8a4 4 0 014 4v13z"></path></svg>
+                    <div class="p-6 bg-purple-50 rounded-xl shadow-md transform hover:scale-105 transition duration-300"
+                        data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-[#6A2ECF]" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 20h-1.025a7.485 7.485 0 01-13.974 0H4V7a4 4 0 014-4h8a4 4 0 014 4v13z"></path>
+                        </svg>
                         <h3 class="text-2xl font-semibold text-[#6A2ECF] mb-3">Community</h3>
-                        <p class="text-gray-600">Fostering diverse, supportive, and inclusive spaces where everyone feels a sense of belonging.</p>
+                        <p class="text-gray-600">Fostering diverse, supportive, and inclusive spaces where everyone
+                            feels a sense of belonging.</p>
                     </div>
-                    <div class="p-6 bg-rose-50 rounded-xl shadow-md transform hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
-                        <svg class="w-12 h-12 mx-auto mb-4 text-[#E83D8E]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    <div class="p-6 bg-rose-50 rounded-xl shadow-md transform hover:scale-105 transition duration-300"
+                        data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
+                        <svg class="w-12 h-12 mx-auto mb-4 text-[#E83D8E]" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                            </path>
+                        </svg>
                         <h3 class="text-2xl font-semibold text-[#E83D8E] mb-3">Engagement</h3>
-                        <p class="text-gray-600">Encouraging active participation and meaningful conversations that enrich perspectives.</p>
+                        <p class="text-gray-600">Encouraging active participation and meaningful conversations that
+                            enrich perspectives.</p>
                     </div>
                 </div>
             </div>
@@ -149,22 +202,87 @@
                 <p class="text-lg text-gray-700 mb-8">
                     MatchGlee will soon be available on your favorite mobile platforms. Get ready to connect on the go!
                 </p>
-                <div class="flex justify-center items-center space-x-6 flex-wrap gap-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
-                    <a href="#" class="inline-flex items-center bg-gray-800 text-white py-3 px-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105" aria-label="Download on Google Play">
-                        <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M7 11.23L12 16.23L17 11.23L12 6.23L7 11.23ZM19 12V21H5V12H19ZM12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 4C7.58 4 4 7.58 4 12C4 16.42 7.58 20 12 20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4Z" fill="white"/>
+                <div class="flex justify-center items-center space-x-6 flex-wrap gap-4" data-aos="zoom-in"
+                    data-aos-duration="1000" data-aos-delay="200">
+                    <a href="#"
+                        class="inline-flex items-center bg-gray-800 text-white py-3 px-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105"
+                        aria-label="Download on Google Play">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-3" fill="currentColor"
+                            viewBox="0 0 48 48" width="48px" height="48px">
+                            <linearGradient id="OpwYZ9nhL01h2sErtedzua" x1="24" x2="24" y1="4.617" y2="40.096"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#33bef0" />
+                                <stop offset="1" stop-color="#0a85d9" />
+                            </linearGradient>
+                            <path fill="url(#OpwYZ9nhL01h2sErtedzua)"
+                                d="M33.9,6H14.1C9.626,6,6,9.626,6,14.1v19.8c0,4.473,3.626,8.1,8.1,8.1h19.8	c4.474,0,8.1-3.627,8.1-8.1V14.1C42,9.626,38.374,6,33.9,6z" />
+                            <path
+                                d="M12.3,30.977c-1.378,0-2.5-1.114-2.5-2.484c0-1.37,1.122-2.484,2.5-2.484h3.798l4.869-8.309	l-1.423-2.429c-0.338-0.578-0.431-1.251-0.262-1.897c0.169-0.646,0.58-1.188,1.156-1.524c0.384-0.224,0.82-0.342,1.262-0.342	c0.885,0,1.712,0.474,2.158,1.237l0.007,0.012l0.006-0.011c0.445-0.763,1.272-1.237,2.158-1.237c0.443,0,0.879,0.119,1.263,0.343	c1.19,0.698,1.59,2.233,0.892,3.422l-6.291,10.736h3.328l0.293,0.295c0.222,0.223,0.425,0.476,0.623,0.774l0.197,0.33	c0.489,0.911,0.598,1.918,0.319,2.854l-0.211,0.714H12.3z"
+                                opacity=".05" />
+                            <path
+                                d="M12.3,30.477c-1.103,0-2-0.89-2-1.984c0-1.094,0.897-1.984,2-1.984h4.084l5.162-8.809l-1.572-2.682	c-0.27-0.461-0.345-1-0.209-1.518c0.135-0.517,0.463-0.95,0.924-1.219c0.307-0.179,0.656-0.274,1.01-0.274	c0.708,0,1.37,0.379,1.727,0.989l0.438,0.749l0.438-0.748c0.356-0.61,1.018-0.989,1.726-0.989c0.354,0,0.703,0.095,1.01,0.274	c0.952,0.559,1.271,1.787,0.713,2.738L21.02,26.509h3.992l0.146,0.147c0.198,0.199,0.381,0.427,0.56,0.698l0.185,0.31	c0.418,0.781,0.511,1.646,0.27,2.456l-0.106,0.357H12.3z"
+                                opacity=".07" />
+                            <path fill="#fff"
+                                d="M25.302,27.63c-0.148-0.224-0.312-0.434-0.498-0.621h-4.656l7.173-12.242	c0.419-0.715,0.179-1.634-0.535-2.053c-0.716-0.419-1.635-0.179-2.052,0.536l-0.87,1.484l-0.87-1.485	c-0.418-0.715-1.337-0.954-2.052-0.536c-0.715,0.418-0.955,1.337-0.536,2.052l1.72,2.935l-5.455,9.309H12.3	c-0.829,0-1.5,0.665-1.5,1.484c0,0.819,0.671,1.484,1.5,1.484h13.394c0.194-0.653,0.141-1.382-0.221-2.058L25.302,27.63z" />
+                            <path
+                                d="M14.5,36.179c-0.443,0-0.879-0.119-1.263-0.344c-0.576-0.338-0.986-0.88-1.155-1.526	c-0.168-0.646-0.075-1.32,0.263-1.896l0.713-1.218l0.44-0.088C13.859,31.036,14.196,31,14.528,31l0.118,0.001	c1.081,0.032,2.06,0.494,2.766,1.3l0.476,0.542l-1.229,2.1C16.211,35.706,15.385,36.179,14.5,36.179z"
+                                opacity=".05" />
+                            <path
+                                d="M14.5,35.679c-0.354,0-0.704-0.095-1.01-0.275c-0.46-0.27-0.789-0.704-0.924-1.221	s-0.061-1.056,0.21-1.517l0.6-1.024l0.22-0.044c0.329-0.066,0.634-0.098,0.932-0.098l0.112,0.001	c0.933,0.028,1.783,0.429,2.396,1.129l0.238,0.271l-1.047,1.789C15.87,35.3,15.208,35.679,14.5,35.679z"
+                                opacity=".07" />
+                            <path fill="#fff"
+                                d="M14.626,32.002c-0.317-0.009-0.628,0.026-0.932,0.087l-0.487,0.831	c-0.419,0.715-0.179,1.634,0.536,2.053c0.238,0.14,0.5,0.206,0.757,0.206c0.515,0,1.017-0.266,1.295-0.741l0.865-1.477	c-0.487-0.556-1.19-0.934-2.03-0.959H14.626z" />
+                            <path
+                                d="M33.229,36.179c-0.885,0-1.712-0.474-2.158-1.236l-6.027-10.285l-0.017-0.052	c-0.417-1.289-0.335-2.618,0.214-3.793l1.669-2.858l4.72,8.055h4.07c1.378,0,2.5,1.114,2.5,2.484c0,1.37-1.122,2.484-2.5,2.484	h-1.159l0.842,1.437c0.338,0.576,0.431,1.249,0.263,1.896s-0.579,1.188-1.155,1.526C34.109,36.06,33.673,36.179,33.229,36.179z"
+                                opacity=".05" />
+                            <path
+                                d="M33.229,35.679c-0.708,0-1.37-0.378-1.727-0.988l-6-10.238l-0.017-0.052	c-0.361-1.118-0.288-2.317,0.208-3.376l1.216-2.081l4.433,7.565H35.7c1.103,0,2,0.89,2,1.984c0,1.094-0.897,1.984-2,1.984h-2.031	l1.283,2.19c0.271,0.461,0.345,1,0.21,1.517s-0.463,0.951-0.924,1.221C33.933,35.584,33.584,35.679,33.229,35.679z"
+                                opacity=".07" />
+                            <path fill="#fff"
+                                d="M35.7,27.009h-4.643l-4.147-7.076l-0.763,1.303c-0.444,0.95-0.504,2.024-0.185,3.011l5.972,10.191	c0.279,0.476,0.78,0.741,1.295,0.741c0.257,0,0.519-0.066,0.757-0.206c0.715-0.419,0.954-1.338,0.535-2.053l-1.725-2.943H35.7	c0.829,0,1.5-0.665,1.5-1.484C37.2,27.674,36.529,27.009,35.7,27.009z" />
                         </svg>
                         <div>
                             <div class="text-xs opacity-75">Get it on</div>
                             <div class="font-semibold text-lg -mt-1">Google Play</div>
                         </div>
                     </a>
-                    <a href="#" class="inline-flex items-center bg-gray-800 text-white py-3 px-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105" aria-label="Download on App Store">
-                        <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2.25C6.477 2.25 2 6.727 2 12.25C2 17.773 6.477 22.25 12 22.25C17.523 22.25 22 17.773 22 12.25C22 6.727 17.523 2.25 12 2.25ZM12 4.25C16.418 4.25 20 7.832 20 12.25C20 16.668 16.418 20.25 12 20.25C7.582 20.25 4 16.668 4 12.25C4 7.832 7.582 4.25 12 4.25ZM12 5.5C9.79 5.5 8 7.29 8 9.5C8 11.71 9.79 13.5 12 13.5C14.21 13.5 16 11.71 16 9.5C16 7.29 14.21 5.5 12 5.5ZM12 7.5C13.105 7.5 14 8.395 14 9.5C14 10.605 13.105 11.5 12 11.5C10.895 11.5 10 10.605 10 9.5C10 8.395 10.895 7.5 12 7.5Z" fill="white"/>
-                            <path d="M12.5 16C12.5 16.2761 12.2761 16.5 12 16.5C11.7239 16.5 11.5 16.2761 11.5 16C11.5 15.7239 11.7239 15.5 12 15.5C12.2761 15.5 12.5 15.7239 12.5 16Z" fill="white"/>
-                            <path d="M14.5 16C14.5 16.2761 14.2761 16.5 14 16.5C13.7239 16.5 13.5 16.2761 13.5 16C13.5 15.7239 13.7239 15.5 14 15.5C14.2761 15.5 14.5 15.7239 14.5 16Z" fill="white"/>
-                            <path d="M10.5 16C10.5 16.2761 10.2761 16.5 10 16.5C9.72386 16.5 9.5 16.2761 9.5 16C9.5 15.7239 9.72386 15.5 10 15.5C10.2761 15.5 10.5 15.7239 10.5 16Z" fill="white"/>
+                    <a href="#"
+                        class="inline-flex items-center bg-gray-800 text-white py-3 px-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105"
+                        aria-label="Download on App Store">
+                        <svg class="w-8 h-8 mr-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 48 48" width="48px" height="48px" baseProfile="basic">
+                            <linearGradient id="AraffhWwwEqZfgFEBZFoqa" x1="18.102" x2="25.297" y1="3.244" y2="34.74"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#35ab4a" />
+                                <stop offset=".297" stop-color="#31a145" />
+                                <stop offset=".798" stop-color="#288739" />
+                                <stop offset="1" stop-color="#237a33" />
+                            </linearGradient>
+                            <path fill="url(#AraffhWwwEqZfgFEBZFoqa)"
+                                d="M13.488,4.012C10.794,2.508,7.605,3.778,6.45,6.323L24.126,24l9.014-9.014L13.488,4.012z" />
+                            <linearGradient id="AraffhWwwEqZfgFEBZFoqb" x1="19.158" x2="21.194" y1="23.862" y2="66.931"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#f14e5d" />
+                                <stop offset=".499" stop-color="#ea3d4f" />
+                                <stop offset="1" stop-color="#e12138" />
+                            </linearGradient>
+                            <path fill="url(#AraffhWwwEqZfgFEBZFoqb)"
+                                d="M33.14,33.014L24.126,24L6.45,41.677 c1.156,2.546,4.345,3.815,7.038,2.312L33.14,33.014z" />
+                            <linearGradient id="AraffhWwwEqZfgFEBZFoqc" x1="32.943" x2="36.541" y1="14.899" y2="43.612"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#ffd844" />
+                                <stop offset=".519" stop-color="#ffc63f" />
+                                <stop offset="1" stop-color="#ffb03a" />
+                            </linearGradient>
+                            <path fill="url(#AraffhWwwEqZfgFEBZFoqc)"
+                                d="M41.419,28.393 c1.72-0.96,2.58-2.676,2.581-4.393c-0.001-1.717-0.861-3.434-2.581-4.393l-8.279-4.621L24.126,24l9.014,9.014L41.419,28.393z" />
+                            <linearGradient id="AraffhWwwEqZfgFEBZFoqd" x1="13.853" x2="15.572" y1="5.901" y2="42.811"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset=".003" stop-color="#0090e6" />
+                                <stop offset="1" stop-color="#0065a0" />
+                            </linearGradient>
+                            <path fill="url(#AraffhWwwEqZfgFEBZFoqd)"
+                                d="M6.45,6.323C6.168,6.948,6,7.652,6,8.408 v31.179c0,0.761,0.164,1.463,0.45,2.09l17.674-17.68L6.45,6.323z" />
                         </svg>
                         <div>
                             <div class="text-xs opacity-75">Available on the</div>
@@ -183,10 +301,12 @@
                     Be the first to know when MatchGlee officially launches. Don't miss out on genuine connections!
                 </p>
                 <div class="flex justify-center space-x-6">
-                    <a href="#" class="bg-white text-[#6A2ECF] hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105 inline-block">
+                    <a href="#"
+                        class="bg-white text-[#6A2ECF] hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105 inline-block">
                         Get Updates
                     </a>
-                    <a href="#" class="border-2 border-white text-white hover:bg-white hover:text-[#6A2ECF] font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105 inline-block">
+                    <a href="#"
+                        class="border-2 border-white text-white hover:bg-white hover:text-[#6A2ECF] font-bold py-3 px-8 rounded-full shadow-lg transform transition duration-300 hover:scale-105 inline-block">
                         Learn More
                     </a>
                 </div>
@@ -198,20 +318,16 @@
             <div class="max-w-2xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
                 <h2 class="text-4xl font-bold mb-6 gradient-text">Suggest a Feature!</h2>
                 <p class="text-lg text-gray-700 mb-8">
-                    Have a brilliant idea that could make MatchGlee even better? We're all ears! Your valuable input directly shapes the future of our platform.
+                    Have a brilliant idea that could make MatchGlee even better? We're all ears! Your valuable input
+                    directly shapes the future of our platform.
                 </p>
                 <form id="suggestionForm" class="flex flex-col items-center">
-                    <textarea
-                        id="featureSuggestion"
-                        rows="6"
+                    <textarea id="featureSuggestion" rows="6"
                         class="w-full p-4 mb-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E83D8E] resize-y"
                         placeholder="Share your innovative idea here... (e.g., 'Dark mode option', 'Enhanced group chat features', 'AI-powered content recommendations')"
-                        aria-label="Feature suggestion textarea"
-                    ></textarea>
-                    <button
-                        type="submit"
-                        class="bg-[#6A2ECF] hover:bg-[#E83D8E] text-white font-bold py-3 px-10 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#E83D8E] focus:ring-opacity-75"
-                    >
+                        aria-label="Feature suggestion textarea"></textarea>
+                    <button type="submit"
+                        class="bg-[#6A2ECF] hover:bg-[#E83D8E] text-white font-bold py-3 px-10 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#E83D8E] focus:ring-opacity-75">
                         Submit Idea
                     </button>
                 </form>
@@ -224,14 +340,56 @@
     <footer class="bg-gray-800 text-white py-8 px-6 text-center">
         <div class="max-w-xl mx-auto flex justify-center items-center space-x-6">
             <a href="#" class="text-gray-400 hover:text-[#E83D8E] transition duration-300" aria-label="MatchGlee on X">
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.21-6.874L6.164 22H2.54l7.556-8.675L2.10 2.25h8.502L13.758 9.5zM17.49 20l-2.813-2.813L1.00 2.25h2.464l4.638 5.766L1.00 22h2.464l4.638-5.766L1.00 22h2.464z" /></svg>
+                <svg class="w-15 h-15" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                    width="48px" height="48px" baseProfile="basic">
+                    <linearGradient id="U8Yg0Q5gzpRbQDBSnSCfPa" x1="4.338" x2="38.984" y1="-10.056" y2="49.954"
+                        gradientUnits="userSpaceOnUse">
+                        <stop offset="0" stop-color="#4b4b4b" />
+                        <stop offset=".247" stop-color="#3e3e3e" />
+                        <stop offset=".686" stop-color="#2b2b2b" />
+                        <stop offset="1" stop-color="#252525" />
+                    </linearGradient>
+                    <path fill="url(#U8Yg0Q5gzpRbQDBSnSCfPa)"
+                        d="M38,42H10c-2.209,0-4-1.791-4-4V10c0-2.209,1.791-4,4-4h28c2.209,0,4,1.791,4,4v28	C42,40.209,40.209,42,38,42z" />
+                    <path fill="#fff"
+                        d="M34.257,34h-6.437L13.829,14h6.437L34.257,34z M28.587,32.304h2.563L19.499,15.696h-2.563 L28.587,32.304z" />
+                    <polygon fill="#fff" points="15.866,34 23.069,25.656 22.127,24.407 13.823,34" />
+                    <polygon fill="#fff" points="24.45,21.721 25.355,23.01 33.136,14 31.136,14" />
+                </svg>
             </a>
-            <a href="#" class="text-gray-400 hover:text-[#6A2ECF] transition duration-300" aria-label="MatchGlee on Instagram">
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.446 2.05h-.892A10.887 10.887 0 001.5 12.004c0 2.91.95 5.584 2.544 7.683a10.887 10.887 0 007.902 3.321h.892A10.887 10.887 0 0022.5 12.004c0-2.91-.95-5.584-2.544-7.683A10.887 10.887 0 0012.446 2.05zM12 4.054a8.046 8.046 0 100 16.092 8.046 8.046 0 000-16.092zM12 6a6 6 0 100 12 6 6 0 000-12zm0 2a4 4 100 8 4 4 0 000-8zm0 2a2 2 0 100 4 2 2 0 000-4z" clip-rule="evenodd" /></svg>
+            <a href="#" class="text-gray-400 hover:text-[#6A2ECF] transition duration-300"
+                aria-label="MatchGlee on Instagram">
+                <svg class="w-15 h-15" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                    width="48px" height="48px">
+                    <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899"
+                        gradientUnits="userSpaceOnUse">
+                        <stop offset="0" stop-color="#fd5" />
+                        <stop offset=".328" stop-color="#ff543f" />
+                        <stop offset=".348" stop-color="#fc5245" />
+                        <stop offset=".504" stop-color="#e64771" />
+                        <stop offset=".643" stop-color="#d53e91" />
+                        <stop offset=".761" stop-color="#cc39a4" />
+                        <stop offset=".841" stop-color="#c837ab" />
+                    </radialGradient>
+                    <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
+                        d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                    <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813"
+                        gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse">
+                        <stop offset="0" stop-color="#4168c9" />
+                        <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
+                    </radialGradient>
+                    <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
+                        d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
+                    <path fill="#fff"
+                        d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
+                    <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
+                    <path fill="#fff"
+                        d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
+                </svg>
             </a>
-            <a href="#" class="text-gray-400 hover:text-red-400 transition duration-300" aria-label="MatchGlee on YouTube">
+            <!-- <a href="#" class="text-gray-400 hover:text-red-400 transition duration-300" aria-label="MatchGlee on YouTube">
                 <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-4.75 7.75c-.828 0-1.5.672-1.5 1.5v3.5c0 .828.672 1.5 1.5 1.5h9.5c.828 0 1.5-.672 1.5-1.5v-3.5c0-.828-.672-1.5-1.5-1.5h-9.5zm-.5 5.5l5.5-3.5-5.5-3.5v7z" clip-rule="evenodd" /></svg>
-            </a>
+            </a> -->
         </div>
         <p class="text-center text-gray-500 text-sm mt-4">&copy; 2025 MatchGlee. All rights reserved.</p>
     </footer>
@@ -260,16 +418,35 @@
                 if (suggestion) {
                     // In a real application, you would send this to a backend server.
                     // For now, we'll just show a success message.
-                    console.log('User Suggestion:', suggestion);
-                    formMessage.textContent = 'Thank you for your suggestion! We\'ve received your idea.';
-                    formMessage.className = 'form-message success block'; // Add 'block' to make it visible
-                    suggestionTextarea.value = ''; // Clear the textarea
 
-                    // Optionally hide the message after a few seconds
-                    setTimeout(() => {
-                        formMessage.classList.remove('block'); // Hide by removing block class
-                        formMessage.textContent = '';
-                    }, 5000);
+                    fetch('https://api-tripwiser.vercel.app/suggestions', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            suggestion
+                        })
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log('Success:', data);
+                            console.log('User Suggestion:', suggestion);
+                            formMessage.textContent = 'Thank you for your suggestion! We\'ve received your idea.';
+                            formMessage.className = 'form-message success block'; // Add 'block' to make it visible
+                            suggestionTextarea.value = ''; // Clear the textarea
+
+                            // Optionally hide the message after a few seconds
+                            setTimeout(() => {
+                                formMessage.classList.remove('block'); // Hide by removing block class
+                                formMessage.textContent = '';
+                            }, 5000);
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
+
+
                 } else {
                     formMessage.textContent = 'Please enter your suggestion before submitting.';
                     formMessage.className = 'form-message bg-red-100 text-red-700 border border-red-400 block'; // Add 'block'
@@ -278,4 +455,5 @@
         });
     </script>
 </body>
+
 </html>

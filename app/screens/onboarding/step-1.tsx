@@ -1,13 +1,14 @@
+import { useRouter } from 'expo-router';
 import React from 'react';
 import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  SafeAreaView,
-  ScrollView,
+    SafeAreaView,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
 } from 'react-native';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import Svg, { Path } from 'react-native-svg';
 
 const CloseIcon = () => (
@@ -89,10 +90,7 @@ const PageIndicators = ({ current, total }: { current: number; total: number }) 
 );
 
 export default function OnboardingStep1() {
-  const handleContinue = () => {
-    // Navigate to next step
-    console.log('Continue to next step');
-  };
+  const router = useRouter();
 
   const handleClose = () => {
     // Handle close action
@@ -134,15 +132,22 @@ export default function OnboardingStep1() {
         </View>
       </ScrollView>
 
-      {/* Bottom Section */}
-      <View style={styles.bottomSection}>
-        <PageIndicators current={0} total={5} />
-        
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.continueButton} onPress={handleContinue}>
-            <Text style={styles.continueButtonText}>I Understand</Text>
-          </TouchableOpacity>
-        </View>
+    {/* Bottom Section */}
+    <View style={styles.bottomSection}>
+      <PageIndicators current={0} total={5} />
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity
+          style={styles.continueButton}
+          onPress={() => {
+            // Navigate to AddPhotos screen
+            router.push('/screens/onboarding/AddPhotos')
+          }}
+        >
+        <Text style={styles.continueButtonText}>I Understand</Text>
+        </TouchableOpacity>
+      </View>
+      
+          
         
         <View style={styles.bottomSpacer} />
       </View>

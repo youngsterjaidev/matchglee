@@ -1,16 +1,14 @@
+import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
+  ImageBackground,
+  SafeAreaView,
   StyleSheet,
   Text,
-  View,
-  TouchableOpacity,
-  ScrollView,
-  SafeAreaView,
   TextInput,
-  Image,
-  ImageBackground,
+  TouchableOpacity,
+  View
 } from 'react-native';
-import { useRouter } from 'expo-router';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import Svg, { Path } from 'react-native-svg';
 
@@ -57,95 +55,95 @@ export default function AnswerPrompts() {
   const handleBack = () => {
     router.back();
   };
-
-  const handleFinishProfile = () => {
-    router.push('/screens/onboarding/FinishProfile');
-  };
-
   const handleShuffle = () => {
     // Logic to shuffle to a new prompt
     console.log('Shuffle prompt');
   };
 
-  return (
+const handleFinishProfile = () => {
+  router.push('/(tabs)');
+};
+
+return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-        {/* Header */}
-        <View style={styles.header}>
-          <TouchableOpacity onPress={handleBack} style={styles.backButton}>
-            <BackIcon />
-          </TouchableOpacity>
-          <View style={styles.headerTitleContainer}>
-            <Text style={styles.headerTitle}>Answer Prompts</Text>
-          </View>
-        </View>
-
-        {/* Title */}
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>Add a Personal Touch</Text>
-        </View>
-
-        {/* Prompt Card */}
-        <View style={styles.promptCardContainer}>
-          <ImageBackground
-            source={{
-              uri: 'https://api.builder.io/api/v1/image/assets/TEMP/90c49e19d432293323c8d6873260af7553280639?width=816'
-            }}
-            style={styles.promptCard}
-            imageStyle={styles.promptCardImage}
-          >
-            <View style={styles.promptOverlay}>
-              <View style={styles.promptContent}>
-                <Text style={styles.promptQuestion}>
-                  What's your favorite way to spend a Sunday?
-                </Text>
-                <TouchableOpacity onPress={handleShuffle}>
-                  <Text style={styles.shuffleText}>Shuffle Prompt</Text>
+        {/* Main Content */}
+        <View style={styles.content}>
+            {/* Header */}
+            <View style={styles.header}>
+                <TouchableOpacity onPress={handleBack} style={styles.backButton}>
+                    <BackIcon />
                 </TouchableOpacity>
-              </View>
+                <View style={styles.headerTitleContainer}>
+                    <Text style={styles.headerTitle}>Answer Prompts</Text>
+                </View>
             </View>
-          </ImageBackground>
+
+            {/* Title */}
+            <View style={styles.titleContainer}>
+                <Text style={styles.title}>Add a Personal Touch</Text>
+            </View>
+
+            {/* Prompt Card */}
+            <View style={styles.promptCardContainer}>
+                <ImageBackground
+                    source={{
+                        uri: 'https://api.builder.io/api/v1/image/assets/TEMP/90c49e19d432293323c8d6873260af7553280639?width=816'
+                    }}
+                    style={styles.promptCard}
+                    imageStyle={styles.promptCardImage}
+                >
+                    <View style={styles.promptOverlay}>
+                        <View style={styles.promptContent}>
+                            <Text style={styles.promptQuestion}>
+                                What's your favorite way to spend a Sunday?
+                            </Text>
+                            <TouchableOpacity onPress={handleShuffle}>
+                                <Text style={styles.shuffleText}>Shuffle Prompt</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </ImageBackground>
+            </View>
+
+            {/* Response Input */}
+            <View style={styles.responseContainer}>
+                <View style={styles.responseInputContainer}>
+                    <TextInput
+                        style={styles.responseInput}
+                        placeholder="Type your response here..."
+                        placeholderTextColor="#A1A1A1"
+                        value={responseText}
+                        onChangeText={setResponseText}
+                        multiline
+                        textAlignVertical="top"
+                    />
+                </View>
+            </View>
+
+            {/* AI Button */}
+            <View style={styles.aiButtonContainer}>
+                <TouchableOpacity style={styles.aiButton}>
+                    <AIIcon />
+                    <Text style={styles.aiButtonText}>AI</Text>
+                </TouchableOpacity>
+            </View>
         </View>
 
-        {/* Response Input */}
-        <View style={styles.responseContainer}>
-          <View style={styles.responseInputContainer}>
-            <TextInput
-              style={styles.responseInput}
-              placeholder="Type your response here..."
-              placeholderTextColor="#A1A1A1"
-              value={responseText}
-              onChangeText={setResponseText}
-              multiline
-              textAlignVertical="top"
-            />
-          </View>
+        {/* Bottom Section */}
+        <View style={styles.bottomSection}>
+            <PageIndicators current={4} total={5} />
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity
+                    style={styles.finishButton}
+                    onPress={handleFinishProfile}
+                >
+                    <Text style={styles.finishButtonText}>Finish Profile</Text>
+                </TouchableOpacity>
+            </View>
+            <View style={styles.bottomSpacer} />
         </View>
-
-        {/* AI Button */}
-        <View style={styles.aiButtonContainer}>
-          <TouchableOpacity style={styles.aiButton}>
-            <AIIcon />
-            <Text style={styles.aiButtonText}>AI</Text>
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
-
-      {/* Bottom Section */}
-      <View style={styles.bottomSection}>
-        <PageIndicators current={4} total={5} />
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={styles.finishButton}
-            onPress={handleFinishProfile}
-          >
-            <Text style={styles.finishButtonText}>Finish Profile</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.bottomSpacer} />
-      </View>
     </SafeAreaView>
-  );
+);
 }
 
 const styles = StyleSheet.create({
@@ -153,8 +151,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFFFFF',
   },
-  scrollContent: {
-    flexGrow: 1,
+  content: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    // Use padding for spacing, adjust as needed
+    paddingBottom: verticalScale(8),
   },
   header: {
     flexDirection: 'row',
@@ -201,7 +202,7 @@ const styles = StyleSheet.create({
     paddingBottom: verticalScale(16),
   },
   promptCard: {
-    height: verticalScale(400),
+    height: verticalScale(160), // Reduced height to fit without scrolling
     borderRadius: scale(12),
     overflow: 'hidden',
     justifyContent: 'flex-end',
@@ -213,22 +214,22 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.4)',
     padding: scale(16),
     justifyContent: 'flex-end',
-    height: verticalScale(120),
+    height: verticalScale(80), // Reduced overlay height
   },
   promptContent: {
     gap: verticalScale(4),
   },
   promptQuestion: {
-    fontSize: moderateScale(24),
+    fontSize: moderateScale(18), // Reduced font size
     fontWeight: '700',
-    lineHeight: moderateScale(30),
+    lineHeight: moderateScale(24),
     color: '#FFFFFF',
     fontFamily: 'System',
   },
   shuffleText: {
-    fontSize: moderateScale(16),
+    fontSize: moderateScale(14),
     fontWeight: '400',
-    lineHeight: moderateScale(24),
+    lineHeight: moderateScale(20),
     color: '#FFFFFF',
     fontFamily: 'System',
   },
@@ -237,7 +238,7 @@ const styles = StyleSheet.create({
     paddingBottom: verticalScale(12),
   },
   responseInputContainer: {
-    minHeight: verticalScale(144),
+    minHeight: verticalScale(72), // Reduced height
     padding: scale(15),
     borderRadius: scale(12),
     borderWidth: 1,
@@ -254,7 +255,7 @@ const styles = StyleSheet.create({
   },
   aiButtonContainer: {
     paddingHorizontal: scale(28),
-    paddingBottom: verticalScale(20),
+    paddingBottom: verticalScale(12),
     alignItems: 'flex-end',
   },
   aiButton: {

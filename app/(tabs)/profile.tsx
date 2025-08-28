@@ -1,17 +1,17 @@
+import { FontFamily } from "@/constants/Fonts";
+import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
 import React, { useState } from "react";
 import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  StyleSheet,
-  SafeAreaView,
-  Image,
   Dimensions,
+  Image,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import { FontFamily } from "@/constants/Fonts";
-import { router } from "expo-router";
 
 const { width } = Dimensions.get("window");
 
@@ -36,7 +36,7 @@ export default function ProfileScreen() {
   );
 
   const handleEditProfile = () => {
-    // router.push("/edit-profile");
+    router.push("/(onboarding)/step-1");
   };
 
   const handleSettings = () => {

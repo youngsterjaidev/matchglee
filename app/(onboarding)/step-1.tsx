@@ -1,12 +1,12 @@
 import { useRouter } from 'expo-router';
 import React from 'react';
 import {
-    SafeAreaView,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import Svg, { Path } from 'react-native-svg';
@@ -140,7 +140,7 @@ export default function OnboardingStep1() {
           style={styles.continueButton}
           onPress={() => {
             // Navigate to AddPhotos screen
-            router.push('/screens/onboarding/AddPhotos')
+            router.push('/AddPhotos')
           }}
         >
         <Text style={styles.continueButtonText}>I Understand</Text>

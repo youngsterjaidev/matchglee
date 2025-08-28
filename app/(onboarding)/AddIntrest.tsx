@@ -118,7 +118,7 @@ const AddIntrest = () => {
             onPress={() => {
               // Navigate to next step in onboarding
               console.log('Selected interests:', selectedInterests);
-              router.push('/screens/onboarding/FinishProfile');
+              router.push('/FinishProfile');
             }}
           >
             <Text style={styles.continueButtonText}>Continue</Text>

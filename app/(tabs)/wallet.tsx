@@ -1,16 +1,19 @@
+import { ThemedText } from "@/components/ThemedText";
+import { FontFamily } from "@/constants/Fonts";
+import { Ionicons } from "@expo/vector-icons";
+import { LinearGradient } from "expo-linear-gradient";
+import { useRouter } from "expo-router";
 import React from "react";
 import {
-  View,
-  ScrollView,
-  TouchableOpacity,
-  StyleSheet,
-  SafeAreaView,
   Dimensions,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+  View,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import { FontFamily } from "@/constants/Fonts";
-import { LinearGradient } from "expo-linear-gradient";
-import { ThemedText } from "@/components/ThemedText";
+  
+
 
 const { width } = Dimensions.get("window");
 
@@ -92,9 +95,12 @@ const recentActivity = [
   },
 ];
 
+
 export default function WalletScreen() {
+const router = useRouter();
+
   const handleBuyPoints = () => {
-    console.log("Buy more points pressed");
+    router.push("/BuyPoints");
   };
 
   const handleHowItWorks = () => {

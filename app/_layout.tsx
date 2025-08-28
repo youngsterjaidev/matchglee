@@ -39,18 +39,13 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack initialRouteName="screens/welcome-screen">
         <Stack.Screen name="screens/welcome-screen" options={{ headerShown: false }} />
-        <Stack.Screen name="screens/login" options={{ headerShown: false }} />
-        <Stack.Screen name="screens/onboarding/step-1" options={{ headerShown: false }} />
-        <Stack.Screen name="screens/onboarding/AddPhotos" options={{ headerShown: false }} />
-        <Stack.Screen name="screens/onboarding/PersonalInterest" options={{ headerShown: false }} />
-        <Stack.Screen name="screens/settings/Settings" options={{ headerShown: false }} />
-        <Stack.Screen name="screens/settings/DiscoverySettings" options={{ headerShown: false }} />
-        <Stack.Screen name="screens/settings/NotificationSettings" options={{ headerShown: false }} />
-        <Stack.Screen name="screens/settings/BlockedUsers" options={{ headerShown: false }} />
-        <Stack.Screen name="screens/settings/DeleteAccount" options={{ headerShown: false }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name = "(wallets)" options={{headerShown: false}}/>
+        <Stack.Screen name="(onboarding)" options={{ headerShown: false }} />
+        <Stack.Screen name = "screens/login" options={{headerShown: false}}/>
+      
         <Stack.Screen
           name="screens/explore-communities"
           options={{ headerShown: false }}

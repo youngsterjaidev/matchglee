@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-import { Link, useRouter } from 'expo-router';
+import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
   KeyboardAvoidingView,
@@ -28,6 +28,7 @@ const LoginScreen = () => {
   const handleLogin = () => {
     // Handle login logic here
     console.log('Login with email:', email, 'password:', password);
+    router.push('/(tabs)')
   };
 
   const handleGoogleSignIn = () => {
@@ -147,9 +148,7 @@ const LoginScreen = () => {
           {/* Bottom Sign Up Link */}
           <View style={styles.bottomContainer}>
             <TouchableOpacity onPress={handleSignUp}>
-              <Link href={'/screens/onboarding/step-1'} >
               <Text style={styles.signUpText}> Don't have an account? Sign Up</Text>
-              </Link>
             </TouchableOpacity>
           </View>
         </ScrollView>

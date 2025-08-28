@@ -119,7 +119,7 @@ const AddPhotos = () => {
         <TouchableOpacity
           style={styles.continueButton}
           onPress={() => {
-            router.push('/screens/onboarding/AddIntrest');
+            router.push('/AddIntrest');
           }}
         >
           <Text style={styles.continueButtonText}>Continue</Text>

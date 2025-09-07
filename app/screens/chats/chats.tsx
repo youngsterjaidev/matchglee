@@ -1,19 +1,19 @@
-import React, { useState, useRef, useEffect } from "react";
+import { FontFamily } from "@/constants/Fonts";
+import { Ionicons } from "@expo/vector-icons";
+import { router } from "expo-router";
+import React, { useEffect, useRef, useState } from "react";
 import {
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity,
-  StyleSheet,
-  SafeAreaView,
-  TextInput,
   Image,
   KeyboardAvoidingView,
   Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import { FontFamily } from "@/constants/Fonts";
-import { router } from "expo-router";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Mock message data
 const initialMessages = [

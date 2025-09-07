@@ -1,16 +1,19 @@
+import { ThemedText } from "@/components/ThemedText";
+import { FontFamily } from "@/constants/Fonts";
+import { Ionicons } from "@expo/vector-icons";
+import { LinearGradient } from "expo-linear-gradient";
+import { useRouter } from "expo-router";
 import React from "react";
 import {
-  View,
-  ScrollView,
-  TouchableOpacity,
-  StyleSheet,
-  SafeAreaView,
   Dimensions,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+  View,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import { FontFamily } from "@/constants/Fonts";
-import { LinearGradient } from "expo-linear-gradient";
-import { ThemedText } from "@/components/ThemedText";
+import { SafeAreaView } from 'react-native-safe-area-context';
+  
+
 
 const { width } = Dimensions.get("window");
 
@@ -92,9 +95,12 @@ const recentActivity = [
   },
 ];
 
+
 export default function WalletScreen() {
+const router = useRouter();
+
   const handleBuyPoints = () => {
-    console.log("Buy more points pressed");
+    router.push("/BuyPoints");
   };
 
   const handleHowItWorks = () => {
@@ -214,7 +220,7 @@ export default function WalletScreen() {
         </View>
 
         {/* Action Buttons */}
-        <View style={styles.actionButtons}>
+        {/* <View style={styles.actionButtons}>
           <TouchableOpacity
             style={styles.buyMoreButton}
             onPress={handleBuyPoints}
@@ -231,7 +237,7 @@ export default function WalletScreen() {
               How it Works
             </ThemedText>
           </TouchableOpacity>
-        </View>
+        </View> */}
 
         {/* Earn More Points Section */}
         <View style={styles.section}>

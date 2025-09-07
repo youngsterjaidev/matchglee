@@ -1,17 +1,16 @@
-import React from "react";
-import {
-  ScrollView,
-  TouchableOpacity,
-  StyleSheet,
-  SafeAreaView,
-  Image,
-  FlatList,
-} from "react-native";
+import { ThemedStatusBar } from "@/components/ThemedStatusBar";
+import { ThemedText } from "@/components/ThemedText";
+import { ThemedView } from "@/components/ThemedView";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
-import { ThemedView } from "@/components/ThemedView";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedStatusBar } from "@/components/ThemedStatusBar";
+import React from "react";
+import {
+  FlatList,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity
+} from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Mock data for communities
 const favouriteCommunities = [

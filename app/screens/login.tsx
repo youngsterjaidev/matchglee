@@ -1,10 +1,8 @@
-import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
   KeyboardAvoidingView,
   Platform,
-  SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
@@ -13,6 +11,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import AppleIcon from '../../components/welcome/Apple-icon';
 import GoogleIcon from '../../components/welcome/Google-icon';
 
@@ -53,6 +52,7 @@ const LoginScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+    
       <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
       <KeyboardAvoidingView
         style={styles.keyboardAvoidingView}
@@ -64,13 +64,13 @@ const LoginScreen = () => {
           showsVerticalScrollIndicator={false}
         >
           {/* Header with Back Button */}
-          <View style={styles.header}>
+          {/* <View style={styles.header}>
             <TouchableOpacity style={styles.backButton} onPress={handleBack}>
               <Ionicons name="arrow-back" size={24} color="#171214" />
             </TouchableOpacity>
             <Text style={styles.headerTitle}>Back</Text>
             <View style={styles.headerSpacer} />
-          </View>
+          </View> */}
 
           {/* Main Content */}
           <View style={styles.content}>
@@ -153,6 +153,7 @@ const LoginScreen = () => {
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
+      
     </SafeAreaView>
   );
 };

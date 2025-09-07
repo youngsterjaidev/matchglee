@@ -6,12 +6,12 @@ import { useRouter } from "expo-router";
 import React from "react";
 import {
   Dimensions,
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   TouchableOpacity,
   View,
 } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
   
 
 
@@ -220,7 +220,7 @@ const router = useRouter();
         </View>
 
         {/* Action Buttons */}
-        <View style={styles.actionButtons}>
+        {/* <View style={styles.actionButtons}>
           <TouchableOpacity
             style={styles.buyMoreButton}
             onPress={handleBuyPoints}
@@ -237,7 +237,7 @@ const router = useRouter();
               How it Works
             </ThemedText>
           </TouchableOpacity>
-        </View>
+        </View> */}
 
         {/* Earn More Points Section */}
         <View style={styles.section}>

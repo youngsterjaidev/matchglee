@@ -1,22 +1,25 @@
+import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 import React from "react";
 import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
+  Dimensions,
+  Linking,
   SafeAreaView,
   ScrollView,
-  Linking,
-  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 
 const { width } = Dimensions.get("window");
 
-export default function WelcomeScreen({ navigation }) {
+export default function WelcomeScreen() {
+  const router = useRouter();
+
   const handleGetStarted = () => {
     // Navigate to main sign up flow
-    navigation.navigate("SignUp");
+    router.push("/(tabs)");
   };
 
   const handleGoogleSignIn = () => {
@@ -31,7 +34,7 @@ export default function WelcomeScreen({ navigation }) {
 
   const handleEmailSignUp = () => {
     // Navigate to email sign up
-    navigation.navigate("EmailSignUp");
+    router.push("EmailSignUp");
   };
 
   const openPrivacyPolicy = () => {

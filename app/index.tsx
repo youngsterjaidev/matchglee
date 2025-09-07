@@ -1,8 +1,8 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
 import React from 'react';
-import AppleIcon from '../../components/welcome/Apple-icon';
-import GoogleIcon from '../../components/welcome/Google-icon';
+import AppleIcon from '../components/welcome/Apple-icon';
+import GoogleIcon from '../components/welcome/Google-icon';
 
 import {
   Image,

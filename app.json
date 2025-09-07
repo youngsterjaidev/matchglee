@@ -1,8 +1,8 @@
 {
   "expo": {
     "name": "MatchGlee",
-    "slug": "MatchGlee",
-    "version": "1.0.2",
+    "slug": "matchglee",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/splash-icon-light.png",
     "scheme": "matchglee",
@@ -17,7 +17,7 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.suren_001.MatchGlee"
+      "package": "com.jai-matchglee.MatchGlee"
     },
     "web": {
       "bundler": "metro",
@@ -43,7 +43,7 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "ea03a3bb-3a20-4bfc-b19a-08c9b0f2990b"
+        "projectId": "9ca25785-18aa-4a6a-aa3a-761a38f3516f"
       }
     }
   }

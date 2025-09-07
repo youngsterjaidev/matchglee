@@ -1,0 +1,7 @@
+.vercel
+.env
+
+key.json
+
+bun.lock
+/node_modules

@@ -17,7 +17,7 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.jai-matchglee.MatchGlee"
+      "package": "com.matchglee.MatchGlee"
     },
     "web": {
       "bundler": "metro",

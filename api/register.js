@@ -1,5 +1,9 @@
 import * as admin from "firebase-admin";
 import * as dotenv from "dotenv";
+import { getApps, initializeApp, applicationDefault } from "firebase-admin/app";
+import { getAuth } from "firebase-admin/auth";
+import { getFirestore, Timestamp } from "firebase-admin/firestore";
+import { getStorage } from "firebase-admin/storage";
 
 dotenv.config();
 
@@ -29,18 +33,45 @@ if (!admin.apps || !admin.apps.length) {
 let Auth = admin.default;
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
+  console.log(req);
+  if (req.method !== "POST")
     return res.status(405).json({ error: "Method Not Allowed" });
-  }
-  const { email, password, displayName } = req.body;
+
   try {
-    const userRecord = await Auth.auth().createUser({
-      email,
-      password,
+    const { email, password, displayName, age, photoBase64 } = req.body || {};
+    if (!email || !password || !displayName || typeof age !== "number")
+      return res.status(400).json({ error: "Missing fields" });
+    if (age < 18) return res.status(400).json({ error: "Age must be 18+" });
+
+    const user = await Auth.createUser({ email, password, displayName }); // create Auth user [web:177]
+
+    let photoURL = "";
+    if (photoBase64) {
+      const bucket = getStorage().bucket();
+      const path = `avatars/${user.uid}/${Date.now()}.jpg`;
+      await bucket.file(path).save(Buffer.from(photoBase64, "base64"), {
+        contentType: "image/jpeg",
+        public: true,
+      });
+      photoURL = `https://storage.googleapis.com/${bucket.name}/${path}`;
+      await Auth.updateUser(user.uid, { photoURL });
+    }
+
+    const db = getFirestore();
+    await db.collection("users").doc(user.uid).set({
       displayName,
+      age,
+      bio: "",
+      photoURL,
+      interests: [],
+      verified: false,
+      createdAt: Timestamp.now(),
+      updatedAt: Timestamp.now(),
     });
-    res.status(201).json({ uid: userRecord.uid, email: userRecord.email });
-  } catch (error) {
-    res.status(400).json({ error: error.message });
+
+    return res.status(201).json({ uid: user.uid, email: user.email, photoURL });
+  } catch (err) {
+    // Vercel auto-parses JSON body; handle malformed JSON with try/catch as needed
+    return res.status(400).json({ error: err.message || "Signup failed" });
   }
 }

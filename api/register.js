@@ -30,7 +30,7 @@ if (!admin.apps || !admin.apps.length) {
   });
 }
 
-let Auth = admin.default;
+let Auth = admin.default.auth();
 
 export default async function handler(req, res) {
   console.log(req);

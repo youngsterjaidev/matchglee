@@ -1,3 +1,4 @@
+import ComingSoon from "@/components/soon";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import {
@@ -82,7 +83,7 @@ const posts = [
   },
 ];
 
-export default function MemeFeed() {
+function MemeFeed() {
   const renderUser = ({ item }: { item: (typeof users)[0] }) => (
     <TouchableOpacity style={styles.userAvatarContainer}>
       <View style={[styles.userAvatar, { backgroundColor: item.color }]}>
@@ -362,3 +363,5 @@ const styles = StyleSheet.create({
     color: "#999",
   },
 });
+
+export default ComingSoon;

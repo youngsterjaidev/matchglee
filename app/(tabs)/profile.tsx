@@ -9,9 +9,14 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  ActivityIndicator,
   View,
+  Alert,
 } from "react-native";
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView } from "react-native-safe-area-context";
+import { signOut } from "firebase/auth";
+import { auth } from "@/config/firebase";
+import { useMyProfile } from "@/hooks/useMyProfile";
 
 const { width } = Dimensions.get("window");
 
@@ -34,6 +39,11 @@ export default function ProfileScreen() {
   const [selectedInterests, setSelectedInterests] = useState(
     new Set(userProfile.interests),
   );
+  const { data: p, loading } = useMyProfile();
+
+  console.log("The data: ", p);
+
+  if (loading) return <ActivityIndicator />;
 
   const handleEditProfile = () => {
     router.push("/(onboarding)/step-1");
@@ -41,6 +51,27 @@ export default function ProfileScreen() {
 
   const handleSettings = () => {
     // router.push("/settings");
+  };
+
+  const handleLogout = () => {
+    Alert.alert("Logout", "Are you sure you want to logout?", [
+      {
+        text: "Cancel",
+        style: "cancel",
+      },
+      {
+        text: "Logout",
+        style: "destructive",
+        onPress: async () => {
+          try {
+            await signOut(auth);
+            router.dismissTo("/screens/login");
+          } catch (error) {
+            Alert.alert("Error", "Failed to logout. Please try again.");
+          }
+        },
+      },
+    ]);
   };
 
   const renderInterestTag = (interest, index) => {
@@ -52,7 +83,9 @@ export default function ProfileScreen() {
         onPress={() => {
           const newSelectedInterests = new Set(selectedInterests);
           if (isSelected) {
-            newSelectedInterests.delete(interest);
+            // newSelectedInterests.delete(interest);
+            // NOTE: check if interest is already selected before adding it again
+            newSelectedInterests.add(interest);
           } else {
             newSelectedInterests.add(interest);
           }
@@ -85,6 +118,12 @@ export default function ProfileScreen() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollContent}
       >
+        {/* Logout Button */}
+        <View style={styles.logoutContainer}>
+          <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
+            <Ionicons name="log-out-outline" size={24} color="#e91e63" />
+          </TouchableOpacity>
+        </View>
         {/* Profile Image */}
         <View style={styles.profileImageSection}>
           <View
@@ -93,9 +132,13 @@ export default function ProfileScreen() {
               { backgroundColor: userProfile.backgroundColor },
             ]}
           >
-            {userProfile.profileImage ? (
+            {p?.photoURL ? (
               <Image
-                source={userProfile.profileImage}
+                source={{
+                  uri:
+                    p?.photoURL ||
+                    "https://04ipd4k3eiw7pb0m.public.blob.vercel-storage.com/avatars/Gqw4VqxcbNYxS990nMkCDn6WOSj1-1759746567222-DmQHEm6UcLSq5OiUYbqQujRyg2Koal.jpg",
+                }}
                 style={styles.profileImage}
               />
             ) : (
@@ -109,10 +152,12 @@ export default function ProfileScreen() {
         {/* Profile Info */}
         <View style={styles.profileInfoSection}>
           <Text style={styles.profileName}>
-            {userProfile.name}, {userProfile.age}
+            {p?.displayName}, {p?.age}
           </Text>
-          <Text style={styles.profileLocation}>{userProfile.location}</Text>
-          <Text style={styles.profileLookingFor}>{userProfile.lookingFor}</Text>
+          <Text style={styles.profileLocation}>{p?.location || "Unknown"}</Text>
+          <Text style={styles.profileLookingFor}>
+            {p?.lookingFor || "Unknown"}
+          </Text>
         </View>
 
         {/* Edit Profile Button */}
@@ -126,18 +171,22 @@ export default function ProfileScreen() {
         </View>
 
         {/* About Me Section */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>About me</Text>
-          <Text style={styles.aboutText}>{userProfile.aboutMe}</Text>
-        </View>
+        {p?.bio ? (
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>About me</Text>
+            <Text style={styles.aboutText}>{p?.bio}</Text>
+          </View>
+        ) : null}
 
         {/* Interests Section */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Interests</Text>
-          <View style={styles.interestsContainer}>
-            {userProfile.interests.map(renderInterestTag)}
+        {p?.interests?.length > 0 ? (
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Interests</Text>
+            <View style={styles.interestsContainer}>
+              {p?.interests?.map(renderInterestTag)}
+            </View>
           </View>
-        </View>
+        ) : null}
 
         {/* Additional spacing at bottom */}
         <View style={styles.bottomSpacing} />
@@ -150,6 +199,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#ffffff",
+  },
+  logoutContainer: {
+    position: "absolute",
+    top: 20,
+    right: 20,
+    zIndex: 1000,
+  },
+  logoutButton: {
+    backgroundColor: "#ffffff",
+    padding: 10,
+    borderRadius: 25,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   header: {
     flexDirection: "row",
@@ -186,8 +251,8 @@ const styles = StyleSheet.create({
     elevation: 6,
   },
   profileImage: {
-    width: 130,
-    height: 130,
+    width: 140,
+    height: 140,
     borderRadius: 65,
     resizeMode: "cover",
   },
@@ -210,15 +275,21 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.regular,
     color: "#666",
     marginBottom: 8,
+    // NOTE: Update later
+    display: "none",
   },
   profileLookingFor: {
     fontSize: 14,
     fontFamily: FontFamily.regular,
     color: "#666",
+    // NOTE: Update later
+    display: "none",
   },
   editButtonSection: {
     paddingHorizontal: 20,
     marginBottom: 32,
+    // NOTE: Update later
+    display: "none",
   },
   editButton: {
     backgroundColor: "#e91e63",

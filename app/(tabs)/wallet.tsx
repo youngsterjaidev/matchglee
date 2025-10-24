@@ -1,3 +1,4 @@
+import ComingSoon from "@/components/soon";
 import { ThemedText } from "@/components/ThemedText";
 import { FontFamily } from "@/constants/Fonts";
 import { Ionicons } from "@expo/vector-icons";
@@ -11,9 +12,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { SafeAreaView } from 'react-native-safe-area-context';
-  
-
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const { width } = Dimensions.get("window");
 
@@ -95,9 +94,8 @@ const recentActivity = [
   },
 ];
 
-
-export default function WalletScreen() {
-const router = useRouter();
+function WalletScreen() {
+  const router = useRouter();
 
   const handleBuyPoints = () => {
     router.push("/BuyPoints");
@@ -483,3 +481,5 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.semiBold,
   },
 });
+
+export default ComingSoon;

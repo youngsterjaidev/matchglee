@@ -8,9 +8,10 @@ import {
   FlatList,
   ScrollView,
   StyleSheet,
-  TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView } from "react-native-safe-area-context";
+import ComingSoon from "../../components/soon";
 
 // Mock data for communities
 const favouriteCommunities = [
@@ -82,7 +83,7 @@ const myCommunities = [
   },
 ];
 
-export default function CommunitiesScreen() {
+function CommunitiesScreen() {
   const handleDiscoverCommunities = () => {
     router.push("/screens/explore-communities");
   };
@@ -294,3 +295,5 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 });
+
+export default ComingSoon;

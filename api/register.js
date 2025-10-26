@@ -1,13 +1,8 @@
+// pages/api/signup.ts (or app/api/signup/route.ts)
+import { put } from "@vercel/blob";
 import * as admin from "firebase-admin";
-import * as dotenv from "dotenv";
-import { getApps, initializeApp, applicationDefault } from "firebase-admin/app";
-import { getAuth } from "firebase-admin/auth";
 import { getFirestore, Timestamp } from "firebase-admin/firestore";
-import { getStorage } from "firebase-admin/storage";
 
-dotenv.config();
-
-// Firebase Admin initialization (see previous instructions)
 if (!admin.apps || !admin.apps.length) {
   admin.default.initializeApp({
     credential: admin.default.credential.cert({
@@ -29,31 +24,28 @@ if (!admin.apps || !admin.apps.length) {
     }),
   });
 }
-
-let Auth = admin.default.auth();
+const Auth = admin.default.auth();
 
 export default async function handler(req, res) {
-  console.log(req);
   if (req.method !== "POST")
     return res.status(405).json({ error: "Method Not Allowed" });
-
   try {
-    const { email, password, displayName, age, photoBase64 } = req.body || {};
-    if (!email || !password || !displayName || typeof age !== "number")
+    const { email, password, displayName, bio, age, photoBase64 } = req.body || {};
+    if (!email || !password || !bio || !displayName || typeof age !== "number")
       return res.status(400).json({ error: "Missing fields" });
     if (age < 18) return res.status(400).json({ error: "Age must be 18+" });
 
-    const user = await Auth.createUser({ email, password, displayName }); // create Auth user [web:177]
+    const user = await Auth.createUser({ email, password, displayName });
 
     let photoURL = "";
     if (photoBase64) {
-      const bucket = getStorage().bucket();
-      const path = `avatars/${user.uid}/${Date.now()}.jpg`;
-      await bucket.file(path).save(Buffer.from(photoBase64, "base64"), {
+      const buffer = Buffer.from(photoBase64, "base64");
+      const blob = await put(`avatars/${user.uid}-${Date.now()}.jpg`, buffer, {
+        access: "public",
         contentType: "image/jpeg",
-        public: true,
+        addRandomSuffix: true,
       });
-      photoURL = `https://storage.googleapis.com/${bucket.name}/${path}`;
+      photoURL = blob.url;
       await Auth.updateUser(user.uid, { photoURL });
     }
 
@@ -61,7 +53,7 @@ export default async function handler(req, res) {
     await db.collection("users").doc(user.uid).set({
       displayName,
       age,
-      bio: "",
+      bio: bio || "",
       photoURL,
       interests: [],
       verified: false,
@@ -71,7 +63,7 @@ export default async function handler(req, res) {
 
     return res.status(201).json({ uid: user.uid, email: user.email, photoURL });
   } catch (err) {
-    // Vercel auto-parses JSON body; handle malformed JSON with try/catch as needed
-    return res.status(400).json({ error: err.message || "Signup failed" });
+    console.log("Error from server: ", err);
+    // return res.status(400).json({ error: err.message || "Signup failed" });
   }
 }

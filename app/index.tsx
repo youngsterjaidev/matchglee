@@ -17,27 +17,27 @@ import { s } from 'react-native-size-matters';
 
 // Feature data matching the design
 const features = [
-  { 
+  {
     icon: <Image source={require('@/assets/images/welcome/personality.png')} style={{ width: 23, height: 20 }} />,
     text: 'Personality-matched connections',
-    
+
   },
-  { 
+  {
     icon: <Image source={require('@/assets/images/welcome/meme.png')} style={{ width: 20, height: 20 }} />,
     text: 'Meme-powered icebreakers',
-    
+
   },
-  { 
+  {
     icon: <Image source={require('@/assets/images/welcome/verified.png')} style={{ width: 20, height: 20 }} />,
     text: 'Verified, real people only',
-   
+
   },
 ];
 
 // Social button component
-const SocialButton: React.FC<{ 
-  icon: React.ReactNode; 
-  text: string; 
+const SocialButton: React.FC<{
+  icon: React.ReactNode;
+  text: string;
   onPress?: () => void;
   style?: any;
 }> = ({ icon, text, onPress, style }) => (
@@ -71,7 +71,7 @@ const WelcomeScreen: React.FC = () => {
 
         {/* Illustration */}
         <View style={styles.illustrationContainer}>
-          <Image 
+          <Image
             source={require('@/assets/images/welcome/home-hero.png')}
             style={styles.illustration}
             resizeMode="contain"
@@ -84,9 +84,9 @@ const WelcomeScreen: React.FC = () => {
             <View key={index} style={styles.featureRow}>
               <View style={styles.featureIconContainer}>
                 <View style={styles.iconBackground}>
-                <Text style={styles.featureIcon}>
-                  {feature.icon}
-                </Text>
+                  <Text style={styles.featureIcon}>
+                    {feature.icon}
+                  </Text>
                 </View>
               </View>
               <Text style={styles.featureText}>{feature.text}</Text>
@@ -113,13 +113,13 @@ const WelcomeScreen: React.FC = () => {
         {/* Social Login */}
         <Text style={styles.orContinue}>or continue with</Text>
         <View style={styles.socialRow}>
-          <SocialButton 
-            icon={<GoogleIcon style={{ width: s(18), height: s(18) }}/>} 
+          <SocialButton
+            icon={<GoogleIcon style={{ width: s(18), height: s(18) }} />}
             text="Google"
             style={styles.socialButtonLeft}
           />
-          <SocialButton 
-            icon={<AppleIcon style={{ width: s(18), height: s(18) }} />} 
+          <SocialButton
+            icon={<AppleIcon style={{ width: s(18), height: s(18) }} />}
             text="Apple"
             style={styles.socialButtonRight}
           />
@@ -171,13 +171,13 @@ const styles = StyleSheet.create({
     marginBottom: s(0),
     flexShrink: 0,
   },
-  iconBackground:{
-  width: s(28),             // Circle width
-  height: s(28),            // Circle height (same as width)
-  borderRadius: s(15),    // Half of width & height to make it a circle
-  backgroundColor: '#F2F0FF', // Choose a circle background color
-  justifyContent: 'center', // Center icon vertically
-  alignItems: 'center',      // Center icon horizontally
+  iconBackground: {
+    width: s(28),             // Circle width
+    height: s(28),            // Circle height (same as width)
+    borderRadius: s(15),    // Half of width & height to make it a circle
+    backgroundColor: '#F2F0FF', // Choose a circle background color
+    justifyContent: 'center', // Center icon vertically
+    alignItems: 'center',      // Center icon horizontally
   },
   logoCircle: {
     backgroundColor: '#E91E63',

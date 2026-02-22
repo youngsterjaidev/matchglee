@@ -649,7 +649,10 @@ export default function ProfileScreen() {
         <LinearGradient colors={["#FF4EC7", "#9A4DFF"]} style={styles.header}>
           {/* Settings */}
           <View style={styles.headerTop}>
-            <TouchableOpacity style={styles.settingsBtn}>
+            <TouchableOpacity
+              style={styles.settingsBtn}
+              onPress={() => router.push("/screens/settings")}
+            >
               <Ionicons name="settings-outline" size={22} color="#fff" />
             </TouchableOpacity>
           </View>
